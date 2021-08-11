@@ -18,8 +18,8 @@ $ or you can use sh: run.sh
 
 ## REST-API Documentations
 
-## Get Summarization
-### Url path & Method
+### Get Summarization
+#### Url path & Method
 
 `POST /api/v1/summarize-text`
 
