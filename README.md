@@ -39,7 +39,7 @@ $ or you can use sh: run.sh
 
 #### Response
 
-`Response status 200`
+`status 200`
 
     HTTP/1.1 200 OK
     Status: 200 OK
@@ -51,6 +51,19 @@ $ or you can use sh: run.sh
             'top_words': [],
             'summary_result': []
         },
+        'status_code': 200,
+        'message': "Success"
+    }
+
+`status 400`
+
+    HTTP/1.1 400 Bad Request
+    Status: 400 Bad Request
+    Connection: close
+    Content-Type: application/json
+
+    {
+        'content': "payload tidak boleh kosong",
         'status_code': 200,
         'message': "Success"
     }
