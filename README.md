@@ -67,5 +67,5 @@ $ or you can use sh: run.sh
     {
         'content': "payload tidak boleh kosong",
         'status_code': 400,
-        'message': "Success"
+        'message': "Bad Request"
     }
