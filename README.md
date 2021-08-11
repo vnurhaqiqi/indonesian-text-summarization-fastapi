@@ -1,5 +1,7 @@
 # Indonesian Text Summarization Using FastAPI
 
+This is REST-API for Indonesian Text Summarization using Non-Negative Matrix Factorization for the algorithm to summarize documents and FastAPI for the framework.
+
 ## Quick Start
 
 ```sh
