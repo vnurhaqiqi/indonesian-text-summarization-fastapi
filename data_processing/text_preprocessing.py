@@ -7,11 +7,15 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 
 
-def corpus_preprocessing(corpus):
+def sentence_tokenizing(corpus):
+    sentences_tokenize = sent_tokenize(corpus.lower())
+
+    return sentences_tokenize
+
+
+def corpus_preprocessing(sentences_tokenize):
     nltk.download('punkt')
     nltk.download('stopwords')
-
-    sentences_tokenize = sent_tokenize(corpus.lower())
 
     remove_char = []
     for sentence in sentences_tokenize:
@@ -33,6 +37,23 @@ def corpus_preprocessing(corpus):
     for ss in sentences_stopwords:
         stemming_words.append(stemmer.stem(ss))
 
-    # TODO: add term weighting
-
     return stemming_words
+
+
+def weighting(stemming):
+    vectorizer = CountVectorizer()
+
+    words_freq = vectorizer.fit_transform(stemming)
+    feature_names = vectorizer.get_feature_names()
+
+    words_freq_df = pd.DataFrame(words_freq.todense(), columns=feature_names)
+
+    data = {
+        'm': len(words_freq_df.columns),
+        'n': len(words_freq_df.index),
+        'A': words_freq,
+        'word_freq_matrix': words_freq_df,
+        'feature_names': feature_names,
+    }
+
+    return data

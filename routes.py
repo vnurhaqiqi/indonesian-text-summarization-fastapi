@@ -13,6 +13,6 @@ async def index():
 @app.post('/api/v1/summarize-text')
 async def summarize_text(payload: Corpus):
     corpus = payload.text
-    data = summarizing_text(corpus)
+    text_preprocessing = preprocessing_data(corpus)
 
-    return data
+    return "OK"

@@ -11,16 +11,15 @@ def test():
     return response_obj.get_response()
 
 
-def summarizing_text(corpus):
+def preprocessing_data(corpus):
     if not corpus:
         response_obj.set_status(400)
         response_obj.set_content("payload tidak boleh kosong.")
 
         return response_obj.get_response()
 
-    preprocessing = corpus_preprocessing(corpus)
+    sentence_tokenize = sentence_tokenizing(corpus)
+    preprocessing = corpus_preprocessing(sentence_tokenize)
+    term_weighting = weighting(preprocessing)
 
-    response_obj.set_status(200)
-    response_obj.set_content(preprocessing)
-
-    return response_obj.get_response()
+    return term_weighting
