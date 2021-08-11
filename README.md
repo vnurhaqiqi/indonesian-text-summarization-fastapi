@@ -9,7 +9,7 @@ $ install all depencies pip install -r requirements.txt
 ```
 
 
-### Run
+## Run
 
 ```sh
 $ run by uvicorn: uvicorn main:app --reload
