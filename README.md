@@ -32,4 +32,7 @@ $ or you can use sh: run.sh
       "num_words": 0,
       "num_sentences": 0
     }
-
+    
+- text [string]: text or corpus to be summarized
+- num_words [int]: numbers of top words in text or corpus
+- num_sentences: numbers of top sentences in text or corpus
