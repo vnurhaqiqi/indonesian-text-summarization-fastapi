@@ -25,3 +25,11 @@ $ or you can use sh: run.sh
 
     http://0.0.0.0:8000/api/v1/summarize-text
 
+#### Request Body
+
+    application/json: {
+      "text": "string",
+      "num_words": 0,
+      "num_sentences": 0
+    }
+
