@@ -1,5 +1,6 @@
 from response import *
 from data_processing.text_preprocessing import *
+from data_processing.non_negative_factorization import NonNegativeFactorization
 
 response_obj = ResponseData()
 
@@ -18,8 +19,22 @@ def preprocessing_data(corpus):
 
         return response_obj.get_response()
 
-    sentence_tokenize = sentence_tokenizing(corpus)
-    preprocessing = corpus_preprocessing(sentence_tokenize)
+    preprocessing = corpus_preprocessing(corpus)
     term_weighting = weighting(preprocessing)
 
     return term_weighting
+
+
+def summarizing_data(pre_processing_data, sentence_tokenize):
+    m, n = pre_processing_data['m'], pre_processing_data['n']
+    feature_names = pre_processing_data['feature_names']
+    A = pre_processing_data['A']
+    sentences = sentence_tokenize
+
+    r = False
+    if m < n:
+        r = m
+    elif m > n:
+        r = n
+    elif m == n:
+        r = m
