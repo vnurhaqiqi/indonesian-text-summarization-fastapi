@@ -14,8 +14,8 @@ def sentence_tokenizing(corpus):
 
 
 def corpus_preprocessing(sentences_tokenize):
-    nltk.download('punkt')
-    nltk.download('stopwords')
+    # nltk.download('punkt')
+    # nltk.download('stopwords')
 
     remove_char = []
     for sentence in sentences_tokenize:
