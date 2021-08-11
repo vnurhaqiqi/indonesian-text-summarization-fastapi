@@ -36,3 +36,21 @@ $ or you can use sh: run.sh
     - text [string]: text or corpus to be summarized
     - num_words [int]: numbers of top words in text or corpus
     - num_sentences: numbers of top sentences in text or corpus
+
+#### Response
+
+`Response status 200`
+
+    HTTP/1.1 200 OK
+    Status: 200 OK
+    Connection: close
+    Content-Type: application/json
+
+    {
+        'content': {
+            'top_words': [],
+            'summary_result': []
+        },
+        'status_code': 200,
+        'message': "Success"
+    }
